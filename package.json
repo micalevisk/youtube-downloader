@@ -21,8 +21,10 @@
     "pino-pretty": "^4.0.0"
   },
   "dependencies": {
+    "content-disposition": "^0.5.3",
     "fastify": "^2.14.0",
     "fastify-static": "^2.7.0",
+    "make-promises-safe": "^5.1.0",
     "ytdl-core": "^2.1.5"
   }
 }
