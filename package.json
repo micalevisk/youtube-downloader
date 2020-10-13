@@ -4,12 +4,13 @@
   "description": "A slim and straightfor web app to download YouTube videos.",
   "main": "app.js",
   "scripts": {
+    "build": "docker-compose --compatibility build",
     "up": "docker-compose --compatibility up -d",
     "down": "docker-compose --compatibility down -v",
     "logs": "docker-compose --compatibility logs -f",
     "stop": "docker-compose --compatibility stop",
-    "add": "docker-compose --compatibility run app npm install",
-    "remove": "docker-compose --compatibility run app npm uninstall",
+    "add": "docker-compose --compatibility exec app npm install",
+    "remove": "docker-compose --compatibility exec app npm uninstall",
     "dev": "nodemon . | pino-pretty",
     "start:dev": "node . | pino-pretty",
     "start": "node ."

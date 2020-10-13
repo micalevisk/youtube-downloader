@@ -12,6 +12,7 @@ npm run start:dev
 npm run dev
 ## or (to use `docker-compose`)
 PORT=8080 npm run up
+PORT=8080 npm run logs
 
 # and go to http://localhost:8080
 ```
