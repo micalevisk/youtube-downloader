@@ -26,6 +26,6 @@
     "fastify": "^2.14.0",
     "fastify-static": "^2.7.0",
     "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^2.1.5"
+    "ytdl-core": "^4.0.0"
   }
 }
