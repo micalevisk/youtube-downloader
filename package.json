@@ -1,6 +1,6 @@
 {
   "name": "youtube-video-downloader",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A slim and straightfor web app to download YouTube videos.",
   "main": "app.js",
   "scripts": {
@@ -18,14 +18,14 @@
   "author": "Micael Levi L. C.",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.3",
-    "pino-pretty": "^4.0.0"
+    "nodemon": "^2.0.6",
+    "pino-pretty": "^4.3.0"
   },
   "dependencies": {
     "content-disposition": "^0.5.3",
-    "fastify": "^2.14.0",
-    "fastify-static": "^2.7.0",
+    "fastify": "^3.9.1",
+    "fastify-static": "^3.3.0",
     "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^4.0.0"
+    "ytdl-core": "^4.1.2"
   }
 }
