@@ -27,6 +27,8 @@ const getNetworkAddress = () => {
   }
 }
 
+server.register(require('fastify-error-page'))
+
 server.listen(PORT, '0.0.0.0', (err, address) => {
   if (err) {
     server.log.error(err)
@@ -40,7 +42,6 @@ server.listen(PORT, '0.0.0.0', (err, address) => {
     server.log.info(`Server listening at ${networkAddress}`)
   }
 })
-
 
 server.register(serve, {
   root: join(__dirname, 'public'),
