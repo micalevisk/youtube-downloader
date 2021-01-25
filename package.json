@@ -1,6 +1,6 @@
 {
   "name": "youtube-video-downloader",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A slim and straightfor web app to download YouTube videos.",
   "main": "app.js",
   "scripts": {
@@ -9,8 +9,7 @@
     "down": "docker-compose --compatibility down -v",
     "logs": "docker-compose --compatibility logs -f",
     "stop": "docker-compose --compatibility stop",
-    "add": "docker-compose --compatibility exec app npm install",
-    "remove": "docker-compose --compatibility exec app npm uninstall",
+    "c:npm": "docker-compose --compatibility exec app npm",
     "dev": "nodemon . | pino-pretty",
     "start:dev": "node . | pino-pretty",
     "start": "node ."
@@ -18,14 +17,15 @@
   "author": "Micael Levi L. C.",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.7",
     "pino-pretty": "^4.3.0"
   },
   "dependencies": {
     "content-disposition": "^0.5.3",
-    "fastify": "^3.9.1",
-    "fastify-static": "^3.3.0",
+    "fastify": "^3.10.1",
+    "fastify-error-page": "^4.0.0",
+    "fastify-static": "^3.4.0",
     "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^4.1.2"
+    "ytdl-core": "^4.4.5"
   }
 }

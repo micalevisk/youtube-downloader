@@ -56,8 +56,8 @@ npm run logs
 # In another shell session:
 export PORT=8080
 ## to install dependencies in container
-npm run add <dependency name ...>
+npm run c:npm install <dependency name ...>
 ## to remove dependencies in container
-npm run remove <dependency name ...>
+npm run c:npm uninstall <dependency name ...>
 ```
 
