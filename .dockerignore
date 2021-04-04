@@ -1,2 +1,11 @@
-node_modules
+.git
+.gitignore
+.dockerignore
+
+demo*
+docker-compose*
+Dockerfile*
+README*
+
+node_modules/
 npm-debug.log
