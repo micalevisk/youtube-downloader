@@ -3,6 +3,7 @@ require('make-promises-safe')
 const { join } = require('path')
 const { networkInterfaces } = require('os')
 const Fastify = require('fastify')
+const fastifyErrorPageMiddleware = require('fastify-error-page')
 const serve = require('fastify-static')
 const ytdl = require('ytdl-core')
 const contentDisposition = require('content-disposition')
@@ -14,6 +15,11 @@ const server = Fastify({
   ignoreTrailingSlash: true,
   connectionTimeout: 1000 * 20, 
 })
+
+const closeGracefully = async () => {
+  if (server) await server.close()
+  process.exit(0)
+}
 
 const getNetworkAddress = () => {
   const interfaces = networkInterfaces()
@@ -27,21 +33,9 @@ const getNetworkAddress = () => {
   }
 }
 
-server.register(require('fastify-error-page'))
+process.on('SIGINT', closeGracefully)
 
-server.listen(PORT, '0.0.0.0', (err, address) => {
-  if (err) {
-    server.log.error(err)
-    process.exit(1)
-  }
-
-  const { port } = server.server.address()
-  const ip = getNetworkAddress()
-  if (ip && port) {
-    const networkAddress = `http://${ip}:${port}`
-    server.log.info(`Server listening at ${networkAddress}`)
-  }
-})
+server.register(fastifyErrorPageMiddleware)
 
 server.register(serve, {
   root: join(__dirname, 'public'),
@@ -86,3 +80,18 @@ server.get('/download/:format', { schema }, async (request, reply) => {
   )
 })
 
+
+
+server.listen(PORT, '0.0.0.0', (err, address) => {
+  if (err) {
+    server.log.error(err)
+    process.exit(1)
+  }
+
+  const { port } = server.server.address()
+  const ip = getNetworkAddress()
+  if (ip && port) {
+    const networkAddress = `http://${ip}:${port}`
+    server.log.info(`Server listening at ${networkAddress}`)
+  }
+})

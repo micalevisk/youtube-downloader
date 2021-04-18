@@ -4,9 +4,10 @@ services:
   app:
     container_name: yt
     restart: always
+    user: "1000:1000"
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.development
     command: npm run dev
     volumes:
       - .:/usr/src/app
@@ -18,5 +19,5 @@ services:
         limits:
           memory: 4096M
         reservations:
-          memory: 2048M
+          memory: 256M
 
