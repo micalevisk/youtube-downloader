@@ -3,8 +3,11 @@
   "version": "2.2.0",
   "description": "A slim and straightfor web app to download YouTube videos.",
   "main": "app.js",
+  "bin": "bin/www",
   "scripts": {
-    "build": "docker-compose --compatibility build",
+    "prebuild": "rm -rf dist",
+    "build": "pkg .",
+    "c:build": "docker-compose --compatibility build",
     "up": "docker-compose --compatibility up -d",
     "down": "docker-compose --compatibility down -v",
     "logs": "docker-compose --compatibility logs -f",
@@ -14,8 +17,13 @@
     "start:dev": "node . | pino-pretty",
     "start": "node ."
   },
-  "author": "Micael Levi L. C.",
+  "author": "Micael Levi L. C. <https://micalevisk.github.io>",
   "license": "ISC",
+  "pkg": {
+    "assets": "public/**/*",
+    "targets": ["node14-linux-x64", "node14-win-x64", "node14-macos-x64"],
+    "outputPath": "dist"
+  },
   "devDependencies": {
     "nodemon": "^2.0.7",
     "pino-pretty": "^4.3.0"

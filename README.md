@@ -4,6 +4,12 @@
 
 ## Usage
 
+1. Go to [releases page](https://github.com/micalevisk/youtube-downloader/releases) and download the latest version
+2. Run the executable that you have downloaded by double-clicking in it
+3. Visit the http://localhost:8080 page
+
+### Building from the source code
+
 > requirements: [Nodejs](https://nodejs.org)
 
 After downloading this project source, run the following commands:
@@ -69,6 +75,7 @@ Every change in `*.js` files will reload the server.
 
 ```bash
 export PORT=8080
+npm run c:build
 npm run up
 npm run logs
 
@@ -83,3 +90,6 @@ npm run c:npm install <dependency name ...>
 npm run c:npm uninstall <dependency name ...>
 ```
 
+### Releasing
+
+We'll use [pkg](https://github.com/vercel/pkg) tool to generate the executable files.
