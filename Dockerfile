@@ -18,16 +18,13 @@ ENV NODE_ENV production
 USER node
 ##   ~~~~ [4] don't run nodejs apps as root.
 
+ENV PORT 8080
+EXPOSE 8080
+
 WORKDIR /home/app
 COPY --chown=node:node --from=build node_modules node_modules
 COPY --chown=node:node . /home/app
 ##     ~~~~~~~~~~~~~~~ [4]
-
-COPY . .
-
-ENV PORT 8080
-
-EXPOSE $PORT
 
 CMD ["dumb-init", "node", "."]
 ##    ~~~~~~~ [5] properly handle events to safely terminate a Node.js apps.
