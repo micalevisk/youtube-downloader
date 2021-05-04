@@ -43,7 +43,7 @@ in your network through `http://<your IP>:8080` address
 ```bash
 # After downloading this project source
 
-docker build --tag yt-downloader:latest
+docker build --tag yt-downloader:latest .
 
 docker run --detach                     \
   --restart=always                      \
