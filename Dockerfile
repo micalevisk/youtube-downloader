@@ -2,7 +2,7 @@
 ## =====================================================> The build image stage
 FROM node:lts-alpine AS build
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci --only=production && npm cache clean --force
 ##  ~~~~~~~~~~~~ [2] install only production dependencies in a reproducible way.
 
 ## ================================================> The production image stage
