@@ -7,12 +7,12 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "pkg .",
-    "c:build": "docker-compose --compatibility build",
-    "up": "docker-compose --compatibility up -d",
-    "down": "docker-compose --compatibility down -v",
-    "logs": "docker-compose --compatibility logs -f",
-    "stop": "docker-compose --compatibility stop",
-    "c:npm": "docker-compose --compatibility exec app npm",
+    "c:build": "docker-compose build",
+    "up": "docker-compose up -d",
+    "down": "docker-compose down -v",
+    "logs": "docker-compose logs -f",
+    "stop": "docker-compose stop",
+    "c:npm": "docker-compose exec app npm",
     "dev": "nodemon . | pino-pretty",
     "start:dev": "node . | pino-pretty",
     "start": "node ."
