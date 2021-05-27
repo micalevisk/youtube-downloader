@@ -3,7 +3,7 @@ version: '2.4'
 services:
   app:
     container_name: yt
-    restart: always
+    restart: on-failure
     user: "1000:1000"
     build:
       context: .
