@@ -5,6 +5,19 @@ COPY package*.json ./
 RUN npm ci --only=production && npm cache clean --force
 ##  ~~~~~~~~~~~~ [2] install only production dependencies in a reproducible way.
 
+## Set this with shell variables at build-time.
+## If they aren't set, then not-set will be default.
+ARG CREATED_DATE=not-set
+ARG SOURCE_COMMIT=not-set
+
+## Labels from OCI https://github.com/opencontainers/image-spec/blob/master/annotations.md
+LABEL org.opencontainers.image.title="Simple YouTube Downloader"
+LABEL org.opencontainers.image.authors=https://t.me/micalevisk
+LABEL org.opencontainers.image.source=https://github.com/micalevisk/youtube-downloader
+LABEL org.opencontainers.image.created=$CREATED_DATE
+LABEL org.opencontainers.image.revision=$SOURCE_COMMIT
+LABEL org.opencontainers.image.licenses=MIT
+
 ## ================================================> The production image stage
 FROM node:14.16.1-alpine3.11
 ##        ~~~~~~~~~~~~~~~~~ [1] use deterministic docker base image tags.
