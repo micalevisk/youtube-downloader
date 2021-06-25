@@ -22,8 +22,8 @@ LABEL org.opencontainers.image.licenses=MIT
 FROM node:14.16.1-alpine3.11
 ##        ~~~~~~~~~~~~~~~~~ [1] use deterministic docker base image tags.
 
-RUN apk add dumb-init
-##          ^~~ Why? read this: https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html
+RUN apk add --no-cache dumb-init
+##                     ^~~ Why? read this: https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html
 
 ENV NODE_ENV production
 ##           ~~~~~~~~~ [3] optimize nodejs tooling for production.
@@ -33,6 +33,9 @@ USER node
 
 ENV PORT 8080
 EXPOSE 8080
+
+HEALTHCHECK --interval=10m --timeout=5s \
+  CMD curl -f http://localhost:$PORT || exit 1
 
 WORKDIR /home/app
 COPY --chown=node:node --from=build node_modules node_modules
