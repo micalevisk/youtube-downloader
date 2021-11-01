@@ -25,15 +25,15 @@
     "outputPath": "dist"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "pino-pretty": "^4.3.0"
+    "nodemon": "^2.0.14",
+    "pino-pretty": "^7.1.0"
   },
   "dependencies": {
     "content-disposition": "^0.5.3",
-    "fastify": "^3.10.1",
+    "fastify": "^3.22.1",
     "fastify-error-page": "^4.0.0",
-    "fastify-static": "^3.4.0",
+    "fastify-static": "^4.4.2",
     "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^4.4.5"
+    "ytdl-core": "^4.9.1"
   }
 }
