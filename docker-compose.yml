@@ -12,6 +12,9 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+      ## Using the same host time on the container
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "${PORT}:8080"
     deploy:
