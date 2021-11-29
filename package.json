@@ -10,7 +10,7 @@
     "c:build": "docker-compose build",
     "up": "docker-compose up -d",
     "down": "docker-compose down -v",
-    "logs": "docker-compose logs -f",
+    "logs": "docker-compose logs -f | pino-pretty",
     "stop": "docker-compose stop",
     "c:npm": "docker-compose exec app npm",
     "dev": "nodemon . | pino-pretty",
