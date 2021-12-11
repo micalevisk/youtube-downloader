@@ -1,6 +1,6 @@
 {
   "name": "youtube-video-downloader",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A slim and straightfor web app to download YouTube videos.",
   "main": "app.js",
   "bin": "bin/www",
@@ -21,7 +21,11 @@
   "license": "ISC",
   "pkg": {
     "assets": "public/**/*",
-    "targets": ["node14-linux-x64", "node14-win-x64", "node14-macos-x64"],
+    "targets": [
+      "node14-linux-x64",
+      "node14-win-x64",
+      "node14-macos-x64"
+    ],
     "outputPath": "dist"
   },
   "devDependencies": {
