@@ -30,14 +30,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
-    "pino-pretty": "^7.3.0"
+    "pino-pretty": "^7.6.0"
   },
   "dependencies": {
     "content-disposition": "^0.5.4",
-    "fastify": "^3.25.3",
+    "fastify": "^3.27.4",
     "fastify-error-page": "^4.0.0",
-    "fastify-static": "^4.5.0",
+    "fastify-static": "^4.6.1",
     "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^4.9.2"
+    "ytdl-core": "^4.11.0"
   }
 }
