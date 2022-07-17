@@ -6,6 +6,12 @@ html {
 button {
   user-select: none;
 }
+button:disabled {
+  opacity: 0.4;
+}
+button:enabled {
+  opacity: 1;
+}
 
 #feedback-page{
 	text-align:center;

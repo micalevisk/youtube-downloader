@@ -29,12 +29,23 @@
     var btnDownVideo = document.getElementById('download-video');
     var URLinput = document.getElementById('url');
 
+    const $btns = document.querySelectorAll('button')
+    function setButtonsStatus(enabled) {
+      $btns.forEach(function ($btn) {
+        if (enabled) $btn.removeAttribute('disabled')
+        else $btn.setAttribute('disabled', true);
+      })
+    }
+
     function redirect(url, format) {
       window.location.href = `./download/${format}/?url=${encodeURIComponent(url)}`;
     }
 
     function handleClick(evt) {
       evt.preventDefault();
+      
+      setButtonsStatus(false);
+
       var url = URLinput.value.trim();
       var format = evt.target.dataset.format;
       if (!url) {
@@ -42,6 +53,7 @@
       } else if (format) {
         redirect(url, format);
       }
+      setButtonsStatus(true);
     }
 
     btns.addEventListener('click', handleClick);
