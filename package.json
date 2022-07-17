@@ -29,14 +29,14 @@
     "outputPath": "dist"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15",
-    "pino-pretty": "^7.6.0"
+    "nodemon": "^2.0.16",
+    "pino-pretty": "^8.0.0"
   },
   "dependencies": {
+    "@fastify/static": "^5.0.2",
     "content-disposition": "^0.5.4",
-    "fastify": "^3.27.4",
+    "fastify": "^3.29.0",
     "fastify-error-page": "^4.0.0",
-    "fastify-static": "^4.6.1",
     "make-promises-safe": "^5.1.0",
     "ytdl-core": "^4.11.0"
   }
