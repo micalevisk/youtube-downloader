@@ -13,7 +13,7 @@
     "logs": "docker-compose logs -f app",
     "stop": "docker-compose stop",
     "c:npm": "docker-compose exec app npm",
-    "dev": "nodemon . | pino-pretty",
+    "dev": "node --watch . | pino-pretty",
     "start:dev": "node . | pino-pretty",
     "start": "node ."
   },
@@ -29,15 +29,14 @@
     "outputPath": "dist"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16",
-    "pino-pretty": "^8.0.0"
+    "pino-pretty": "^11.2.2"
   },
   "dependencies": {
-    "@fastify/static": "^5.0.2",
+    "@distube/ytdl-core": "^4.14.4",
+    "@fastify/static": "^5",
     "content-disposition": "^0.5.4",
-    "fastify": "^3.29.0",
+    "fastify": "^3",
     "fastify-error-page": "^4.0.0",
-    "make-promises-safe": "^5.1.0",
-    "ytdl-core": "^4.11.0"
+    "make-promises-safe": "^5.1.0"
   }
 }

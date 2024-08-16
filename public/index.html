@@ -11,6 +11,7 @@
    <div id="form-div">
         <p class="name">
           <input id="url" type="url" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input"
+            autofocus="true"
             autocomplete="off"
             required
             pattern=".*youtube.*"
@@ -43,7 +44,7 @@
 
     function handleClick(evt) {
       evt.preventDefault();
-      
+
       setButtonsStatus(false);
 
       var url = URLinput.value.trim();

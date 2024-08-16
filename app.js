@@ -5,7 +5,7 @@ const { networkInterfaces } = require('os')
 const Fastify = require('fastify')
 const fastifyErrorPageMiddleware = require('fastify-error-page')
 const serve = require('@fastify/static')
-const ytdl = require('ytdl-core')
+const ytdl = require('@distube/ytdl-core')
 const contentDisposition = require('content-disposition')
 
 const PORT = process.env.PORT || 8080
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 8080
 const server = Fastify({
   logger: true,
   ignoreTrailingSlash: true,
-  connectionTimeout: 1000 * 20, 
+  connectionTimeout: 1000 * 20,
 })
 
 const closeGracefully = async () => {
